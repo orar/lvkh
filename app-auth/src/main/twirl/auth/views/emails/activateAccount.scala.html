@@ -1,0 +1,8 @@
+@(user: _root_.auth.models.User, url: String)(implicit messages: Messages)
+
+<html>
+    <body>
+        <p>@messages("auth.email.activate.account.hello", user.firstName)</p>
+        <p>@Html(messages("auth.email.activate.account.html.text", url))</p>
+    </body>
+</html>

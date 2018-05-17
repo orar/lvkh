@@ -1,0 +1,55 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+
+$body-bg-color: #f0f2f5;
+//#fdfeff
+$header-height: 50px;
+
+$s-alert-info: #59a0e6;
+$s-alert-success: #3c763d;
+$s-alert-warning: #b2742b;
+$s-alert-error: #a94442;
+
+.redBg {
+  background-color: rgba(255, 5, 32, 0.18);
+}
+
+.greenBg {
+  background-color: rgba(8, 255, 22, 0.18);
+}
+
+
+$themeBorder: #5d6ee6;
+$themeBorderHighlight: #5d6ee6;
+
+$redWhiteFace:  #ff867d;
+$redWhiteFace2: #ff4e47;
+$redFace: #ff292a;
+$redFace2: #db020e;
+$white-face: #fcfcfc;
+
+$greenFace: #209f1c;
+$goldFace: #dcbc15;
+
+$thinGrayBorder: rgb(231, 231, 231);
+
+.redWhiteFace {  color:$redWhiteFace;  }
+.greenWhiteFace {  color: #94ff9c;  }
+.greenDarkFace {  color: #5ead5e;  }
+
+.blueDarkFace {  color: #2a5cab;  }
+
+
+
+%antdInputRadius{
+
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="text"],
+  form textarea.form-control {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+}

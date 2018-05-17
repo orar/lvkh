@@ -1,0 +1,134 @@
+@import "../../../../styles/partials/variables";;
+
+
+.dateFixtureContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin: 10px auto;
+  padding-bottom: 2px;
+  border-bottom: 1px solid $thinGrayBorder;
+
+
+  .fixtureLocationBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-transform: capitalize;
+    white-space: nowrap;
+    font-size: small;
+    margin-bottom: 8px;
+  }
+
+
+  .fixtureContentBoard {
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: 0;
+    //min-width: 0;
+    .team1,.team2 {
+      flex: 3 3 0
+    }
+    .scoreTime {
+      flex: 1 1 0;
+    }
+
+    @media all and (max-width: 430px){
+      flex-flow: column nowrap;
+    }
+  }
+
+  .fixtureTeamContainer {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+
+    @media all and (max-width: 430px){
+      padding-left: 20px;
+      justify-content: flex-start;
+    }
+
+    .fixtureTeamContent {
+      display: flex;
+      flex-flow: row nowrap;
+      text-transform: capitalize;
+      white-space: nowrap;
+      justify-content: flex-end;
+
+
+      .fixtureTeamImgWrap {
+        width: 60px;
+        @media all and (max-width: 500px) {
+          width: 40px;
+        }
+        .fixtureTeamImg {
+          width: 55px;
+          height: 35px;
+
+          @media all and (max-width: 500px) {
+            width: 35px;
+            height: 25px;
+          }
+        }
+      }
+      .fixtureTeamName {
+        width: 150px;
+        align-self: center;
+        display: flex;
+        align-content: center;
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        @media all and (max-width: 530px){
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  .team1 {
+    .fixtureTeamContainer, .fixtureTeamContent{
+      .fixtureTeamName {
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+
+
+  .team2 {
+
+     .fixtureTeamContainer, .fixtureTeamContent{
+       flex-flow: row-reverse nowrap;
+       text-align: right;
+
+       @media all and(max-width: 430px) {
+         flex-flow: row nowrap;
+         text-align: left;
+
+       }
+
+       .fixtureTeamName {
+         justify-content: flex-end;
+
+       }
+       .fixtureTeamImg, .fixtureTeamName {
+         @media all and (max-width: 430px){
+           justify-content: flex-start;
+         }
+       }
+     }
+   }
+
+
+  .scoreTime {
+    //width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+}

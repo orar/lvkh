@@ -1,0 +1,48 @@
+
+@import "../../../../styles/partials/variables";
+
+.profileContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+
+  @media all and (max-width: 490px) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .profileCard {
+    width: 700px;
+
+    margin: 10px auto;
+    cursor: auto;
+
+    @media all and (max-width: 992px) {
+      width: 570px;
+    }
+
+    @media all and (max-width: 600px) {
+      width: 90vw;
+    }
+
+
+    @media all and (max-width: 490px) {
+      width: 92vw;
+    }
+
+    @media all and (max-width: 350px) {
+          width: 300px;
+    }
+
+
+    @extend %antdInputRadius;
+
+  }
+
+}

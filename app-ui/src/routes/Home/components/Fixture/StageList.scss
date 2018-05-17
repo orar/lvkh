@@ -1,0 +1,18 @@
+@import "../../../../styles/partials/variables";
+
+.stageListContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 30px;
+
+
+  .stageListHeader {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $thinGrayBorder;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 300;
+  }
+}

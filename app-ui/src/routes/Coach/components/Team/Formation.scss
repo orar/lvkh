@@ -1,0 +1,51 @@
+
+
+.formationContainer {
+  width: 100%;
+  min-height: 8rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: -23px;
+  padding-top: 8px;
+
+
+  .formationInfo {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+
+  }
+
+  .formationInfoLock {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+  }
+  .formationInfoCurrent {
+
+  }
+  .formationSelect {
+    margin: 8px;
+    justify-content: center;
+
+    .formationOption {
+      width: 18rem;
+
+      @media all and (max-width: 500px) {
+        width: 12rem;
+      }
+
+    }
+
+    .formationChange {
+      @media all and (max-width: 500px) {
+       // width: 1rem;
+      }
+    }
+  }
+}

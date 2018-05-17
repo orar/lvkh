@@ -1,0 +1,91 @@
+
+
+.profileWidgetContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 350px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  $avatarSize: 160px;
+
+
+  @media (max-width: 768px){
+    //$avatarSize: 70px;
+    width: 350px;
+  }
+  @media (max-width: 320px){
+    //$avatarSize: 70px;
+    width: 100%;
+  }
+
+  .profileAvatarWrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    .profileAvatar {
+      width: $avatarSize;
+      height: $avatarSize;
+      border: 3px rgba(244, 244, 244, 0.37) solid;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      left: calc(50% - calc(#{$avatarSize} / 2));
+      top: calc(calc(#{$avatarSize} /2) * -1);
+
+
+
+    }
+  }
+
+  .profileDetail {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-top: $avatarSize / 2;
+    padding: auto 8px;
+
+    p {
+      margin: 0 auto;
+    }
+
+    .basicDetail {
+      text-align: center;
+      .basicDetailName {
+        font-size: 20px;
+        font-weight: 300;
+      }
+      &>h3 {
+        font-weight: 300;
+        font-size: large;
+        color: #333333;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: small;
+        color: #5b5b5b;
+        margin: 0 auto;
+      }
+    }
+
+    .statusMsg {
+      &>p {
+        font-size: small;
+        font-weight: 400;
+        padding: 8px 3px;
+        text-align: center;
+      }
+    }
+
+    .collapseFan {
+      text-align: center;
+
+
+      .collapseButton {
+        cursor: pointer;
+      }
+    }
+  }
+}

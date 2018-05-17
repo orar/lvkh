@@ -1,0 +1,51 @@
+// @flow
+
+export type Player = {
+  id: string,
+  teamID: string,
+  originID: string,
+  originName: string,
+  seasonID: string,
+  seasonYear: number,
+  coverUrl: string,
+  avatarUrl: string,
+  name: string,
+  jerseyName: string,
+  age: number,
+  goals: number,
+  height: number,
+  weight: number,
+  position: number,
+  role: string,
+  field: boolean,
+  injured: boolean,
+  evicted: boolean,
+  rating: number,
+  country: number,
+  dateTime: number,
+};
+
+/*
+const CR7: Player = {
+  id: 'e3d4acae42',
+  teamID: 'e3d4acae42',
+  originID: 'e3d4acae42',
+  originName: 'Real Madrid',
+  seasonID: 'e3d4acae42',
+  seasonYear: 2017,
+  coverUrl: 'cro_full.png',
+  avatarUrl: 'cro.png',
+  name: 'Cristiano Ronaldo',
+  age: '27',
+  goals: '67',
+  height: '5.9',
+  weight: 78,
+  position: 7,
+  role: 'forward',
+  field: true,
+  evicted: false,
+  rating: 4.8,
+  country: 'Portugal',
+  dateTime: 1503432534323,
+};
+*/

@@ -1,0 +1,41 @@
+
+
+.accountContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 15px;
+  height: 100%;
+  width: 100%;
+
+
+  .accountPromoCard {
+    width: 315px;
+    cursor: auto;
+
+    @media all and(min-width: 400px) {
+      width: 400px;
+    }
+
+    .accountPromoCardTitle {
+      font-weight: 300;
+      font-size: 25px;
+      text-align: center;
+      margin: -5px auto
+    }
+
+    .accountBalance {
+      display: flex;
+      flex-flow:  row wrap;
+      justify-content: center;
+
+      span {
+        font-size: 15px;
+        margin: 10px;
+        white-space: nowrap;
+      }
+    }
+  }
+}

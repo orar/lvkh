@@ -1,0 +1,99 @@
+
+
+.homePageContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: -60px 0 0 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+
+.homePromoCardBoard {
+  position: relative;
+  width: 100%;
+
+  .homePromoCard {
+    position: absolute;
+    height: 150px;
+    width: 400px;
+    top: -40vh;
+    left: calc(50% - 200px);
+    z-index: 300;
+
+    @media all and (max-width: 500px) {
+      width: 350px;
+      left: calc(50% - 175px);
+
+    }
+
+    background: rgba(200, 200, 200, 0.72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    .promoCodeHeader {
+      p {
+       font-size: 16px;
+      }
+
+      small {
+        font-size: 14px;
+      }
+    }
+  }
+
+
+
+}
+  .slide {
+    height: 100vh;
+    //width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+        opacity: .5;
+    }
+
+    .slideText{
+      width: 100%;
+      height: 100%;
+      white-space: normal;
+
+      .slideTextContent {
+        position: relative;
+        top: 35%;
+        text-align: center;
+        z-index: 200;
+        color: #ffffff;
+
+        @media all and(max-width: 500px) {
+          top: 20%;
+        }
+
+        .slideTextHeader {
+          font-size: 40px;
+          color: #ffffff;
+        }
+        .slideTextBody {
+          color: #ffffff;
+
+        }
+
+      }
+    }
+  }
+}

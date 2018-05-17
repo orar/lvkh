@@ -1,0 +1,154 @@
+@import "../../../../styles/partials/variables";
+
+.playerInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+
+  .fieldPlayerInfo_name {
+    display: inline-flex;
+    font-size: 13px;
+    background: linear-gradient( 45deg, rgba(54, 54, 54, 0.7), #bec3bf);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    .playerName {
+      margin-right: 2px;
+      font-weight: 600;
+    }
+    .playerRole {
+      float: right;
+      margin-right: 1px;
+      padding: 1px;
+      font-size: 10px;
+
+      color: #FFFFFF;
+      background-color: #3f7d42;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+
+    .captain, .viceCaptain {
+      font-weight: 700;
+      float: left;
+      padding: 0 3px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+    .captain {
+      background: rgba(136, 6, 1, 0.87);
+
+    }
+    .viceCaptain {
+      background: rgba(155, 155, 0, 0.88);
+    }
+  }
+
+
+  .playerSideOptions {
+    $width: 20px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: radial-gradient(circle at top, #363636, #b6b5b0);
+    padding: -3px 0 0;
+    margin: 0;
+    text-align: center;
+
+
+    .removeRole {
+      width: 100%;
+      border-radius: 50%;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .captainize,
+    .viceCaptainize {
+      font-size: 16px;
+      height: 20px;
+      width: 100%;
+
+    }
+
+    .captainize,
+    .viceCaptainize {
+     cursor: pointer;
+      margin: 0;
+      padding: -3px 0;
+      text-transform: uppercase;
+    }
+    .captainize {
+      background: rgba(136, 6, 1, 0.80);
+    }
+    .viceCaptainize {
+      background: rgba(155, 155, 0, 0.80);
+      -webkit-border-radius: 0 0 8px 8px;
+      -moz-border-radius: 0 0 8px 8px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .active, .injured, .evicted {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 600;
+      width: 100%;
+      -webkit-border-radius: 0 0 8px 8px;
+      -moz-border-radius: 0 0 8px 8px;
+      border-radius: 0 0 8px 8px;
+      text-align: center;
+      cursor: default;
+    }
+
+    .active {
+      background-color: $greenFace;
+    }
+    .injured {
+      background-color: $goldFace;
+    }
+    .evicted {
+      background-color: $redFace2;
+    }
+
+
+  }
+
+
+  .totalScore {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    padding-top: 2px;
+    top: calc(50% - 20px);
+    left: calc(50% - 15px);
+    pointer-events: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 100%;
+    text-align: center;
+    background: rgba(54, 54, 54, 0.7);
+    //background: linear-gradient( 45deg, rgba(54, 54, 54, 0.7), #bec3bf);
+    //background: radial-gradient(circle at center, #363636, transparent);
+  }
+}

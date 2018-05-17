@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+
+
+.inComment {
+  width: 100%;
+
+  .itemComment {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 8px;
+
+    .itemComment--avatar {
+      float: left;
+    }
+    .itemComment--info {
+      float: left;
+      display: flex;
+      flex-flow: column nowrap;
+      padding-left: 0.5rem;
+      p {
+        margin: .25rem .3rem;
+      }
+      .itemComment--user {
+        font-size: 1.15rem;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .itemComment--comment {
+        font-size: 1.3rem;
+
+      }
+
+      .itemComment--date {
+        font-size: 1rem;
+
+      }
+    }
+
+
+  }
+
+  .inCommentForm {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .inCommentFormTextArea {
+    flex: 3 3 0;
+  }
+  .inCommentFormSend{
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,154 @@
+
+
+
+.gameContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  //justify-content: center;
+  //align-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: auto 20px;
+
+  .gameHeader {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+    max-width: 1200px;
+
+    .pageHeader {
+
+    }
+    .pageSubHeader {
+      font-size: 22px;
+    }
+
+  }
+
+
+  .gamePlans {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    //align-items: baseline;
+    align-content: center;
+    margin-bottom: 200px;
+
+
+
+    .gameCard {
+      display: flex;
+      position: relative;
+      width: 450px;
+      height: 400px;
+      margin: 8px 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      text-transform: capitalize;
+      color: #e4e4e4;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      @media all and(max-width: 400px) {
+        width: 90vw;
+        min-height: 400px;
+
+      }
+
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        //margin: 8px 0;
+        background: linear-gradient(45deg, rgba(78, 76, 88, 0.71), rgba(159, 145, 138, 066)) center;
+      }
+
+      .ant-card-body {
+        position: absolute;
+        z-index: 2;
+      }
+
+      .gameName {
+        width: 100%;
+        font-size: 45px;
+        line-height: 45px;
+        margin-bottom: 16px;
+        //align-self: baseline;
+      }
+      .gameMessage {
+        width: 100%;
+        font-size: 20px;
+        align-self: baseline;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+
+      }
+    }
+
+
+  }
+
+
+
+
+  .guestGameSignIn {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .ad {
+
+    }
+    .signIn {
+
+    }
+
+  }
+  .gameSignInAdContainer {
+
+  }
+  .gameSignInAdHeader {
+
+  }
+}
+
+.vertical-center-modal {
+  text-align: center;
+  white-space: nowrap;
+  padding: 0;
+
+
+  .ant-modal {
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    text-align: left;
+
+    //width: 300px !important;
+    padding: 0;
+
+    .ant-modal-body{
+      padding: 0;
+
+
+    }
+  }
+
+}
+
+.vertical-center-modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0;
+}

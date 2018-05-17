@@ -1,0 +1,35 @@
+@import "../../../../styles/partials/variables";
+
+.playerInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .playerDragImg {
+    cursor: pointer;
+  }
+
+  .playerInfo_name {
+    font-size: 13px;
+    text-overflow: clip;
+
+    .playerName {
+      margin-right: 2px;
+    }
+
+    .playerRole {
+      margin: 0;
+      padding: 2px 1px;
+      font-size: 10px;
+
+      color: #FFFFFF;
+      background-color: #3f7d42;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+
+}

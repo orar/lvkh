@@ -1,0 +1,374 @@
+// Palette
+$body-bg-color:  #2a437c;
+$body-bg-color-2    : #10203b;
+$colors-text-def    : #333;
+$colors-text-med    : #777;
+$colors-text-lt     : #aaa;
+$colors-card-bg1    : #f7f7f7;
+$colors-card-bg2    : #eeeeee;
+$colors-card-bg3    : #1d2643;
+$colors-card-txt    : #a40028;
+$field-bg-color     : #eeeeee;
+$field-side-color   : #f7f7f7;
+$line-color         : rgba(255,255,255,0.5);
+$texture-field-side : #141d2b;
+
+// Field dimensions
+$stage-perspective  : 1100px;
+$field-y            : 840px;
+$field-x            : ($field-y * 0.8);
+$field-ratio        : ($field-x / $field-y);
+$field-side-y       : 8px;
+$field-rot          : 90deg;
+$field-buffer       : 4%;
+$line-x             : 3px;
+$line-circle-x      : 25%;
+
+// Player dimensions
+$player-x           : 65px;
+$card-x             : 230px;
+$card-y             : 260px;
+
+
+@mixin asset($filename) {
+  background-image: url('/static/brand/home/#{$filename}');
+}
+
+.static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 0;
+  z-index: 3
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 16px;
+  line-height: 16px;
+  color: #fff;
+  font-family: 'montserrat';
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-align: center;
+  opacity: 0;
+}
+
+.team-list {
+  position: absolute;
+  left: 40px;
+  top: 100px;
+  list-style: none;
+  display: none;
+
+  li: first-child {
+    color: #fff;
+    font-weight: bold;
+  }
+  li {
+    font-size: 1.4rem;
+    margin: 0 0 10px;
+    color: lighten($body-bg-color, 50%);
+  }
+}
+
+
+.stageContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  //overflow-y: hidden;
+
+  .stagePitch {
+    position: relative;
+    top: 10px;
+    left: 0;
+    //overflow-x: auto;
+    height: 600px;
+    margin: auto -20px -13px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.stage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -270px;
+  perspective-origin: 50% -200px;
+  perspective: $stage-perspective;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.world {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  margin-left: -($field-x / 2);
+  width: $field-x;
+  height: $field-y;
+  //transform: translateZ(-($field-y / 4));
+  transform-style: preserve-3d;
+  z-index: 1;
+  backface-visibility: hidden ;
+  &.flipped {
+    transform: translateZ(-($field-y / 4)) rotateY(180deg);
+  }
+  & .switched {
+    transform: translateZ(250px) rotateY(30deg) translateX(60px) translateY(-200px);
+  }
+}
+
+
+.team {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.terrain{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: inherit;
+}
+
+.field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $field-bg-color;
+  z-index: 2;
+  transform: rotateX($field-rot) translateZ(0);
+  transform-origin: 50% 50%;
+  box-sizing: content-box;
+  backface-visibility: hidden;
+}
+.field--alt {
+  display: block;
+  width: 80%;
+  left: 10%;
+  transform: rotateX($field-rot) translateZ(-10px);
+  background: black;
+  opacity: 0.3;
+  box-shadow: 0 0 40px 30px #000;
+}
+
+.field__texture {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  & .field__texture--gradient {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+    z-index: 4;
+  }
+  .flipped & {
+    opacity: 0;
+  }
+  &.field__texture--gradient-b {
+    opacity: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+    z-index: 4;
+  }
+  .flipped & {
+    opacity: 1;
+  }
+
+  .texture & {
+    &.field__texture--grass {
+    @include asset('grass2.png');
+      background-repeat: repeat;
+      background-size: 75px 75px;
+      background-position: - 20 px - 20 px;
+    }
+  }
+}
+
+.field__side {
+  position: absolute;
+  top: ($field-y / 2);
+  left: 0;
+  width: 100%;
+  height: $field-side-y;
+  transform: rotateX($field-rot * 2) translateZ(-($field-y / 2));
+  transform-origin: 50% 50%;
+  background-color: $field-side-color;
+  z-index: 9;
+
+  .texture & {
+    background-color: black;
+  }
+
+  &:after {
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.55;
+  @include asset('mud.png');
+    background-repeat: repeat;
+    background-size: 75px 75px;
+    background-position: -20px -20px;
+  }
+
+  &.field__side--left,
+  &.field__side--right {
+    top: 0;
+    left: -($field-side-y);
+    height: 100%;
+    width: $field-side-y;
+    transform-origin: 100% 50%;
+    transform: rotateX($field-rot) rotateY(-90deg) translateZ(0);
+  }
+  &.field__side--right {
+    left: auto;
+    right: 0;
+  }
+  &.field__side--back {
+    transform: rotateX(calc(#{$field-rot} * 2)) translateZ(($field-y / 2));
+  }
+}
+.field__line {
+  position: absolute;
+  width: 100%;
+  height: $line-x;
+  z-index: 4;
+}
+.field__line--goal {
+  width: 16%;
+  height: 6%;
+  border: solid $line-x $line-color;
+  border-bottom: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: $field-buffer;
+}
+.field__line--goal--far {
+  top: $field-buffer;
+  bottom: auto;
+  border: solid $line-x $line-color;
+  border-top: none;
+}
+
+.field__line--penalty-arc {
+  width: 20%;
+  height: 20%;
+  overflow: hidden;
+  bottom: calc(#{$field-buffer} + 16%);
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  &:after {
+    position: absolute;
+    top: 75%;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    content: ' ';
+    display: block;
+    border-radius: 50% 50% 0 0;
+    border: solid $line-x $line-color;
+    border-bottom: none;
+    box-sizing: border-box;
+  }
+}
+
+.field__line--penalty-arc--far {
+  bottom: auto;
+  top: calc(16% + #{$field-buffer});
+
+  &:after {
+    bottom: 75%;
+    top: auto;
+    border: solid $line-x $line-color;
+    border-top: none;
+    border-radius: 0 0 50% 50%;
+  }
+}
+
+.field__line--penalty {
+  width: 44%;
+  height: 16%;
+  border: solid $line-x $line-color;
+  border-bottom: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: $field-buffer;
+}
+.field__line--penalty--far {
+  top: $field-buffer;
+  bottom: auto;
+  border: solid $line-x $line-color;
+  border-top: none;
+}
+.field__line--outline {
+  width: (100% - ($field-buffer * 2));
+  height: (100% - ($field-buffer * 2));
+  top: $field-buffer;
+  left: $field-buffer;
+  border: solid $line-x $line-color;
+}
+.field__line--mid {
+  top: 50%;
+  width: calc(100% - calc(#{$field-buffer} * 2));
+  left: $field-buffer;
+  background-color: $line-color;
+}
+.field__line--circle {
+  width: 20%;
+  height: 20%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: solid $line-x $line-color;
+  border-radius: 50%;
+}
+.debug-btn {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  border: solid 1px #fff;
+  border-radius: 10px;
+  height: 20px;
+  padding: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 20px;
+
+  &:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &.debug-btn--load {
+    top: 80px;
+  }
+}

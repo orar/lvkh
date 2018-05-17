@@ -1,0 +1,154 @@
+
+$squareSize: 100px;
+
+.playerDetailContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  //align-items: stretch;
+
+  .detailCoverWrap {
+    width: 100%;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .detailAvatarWrap {
+    position: relative;
+
+    .detailAvatar {
+      position: absolute;
+      top: calc(calc(#{$squareSize} /  2) * -1);
+      left: calc(50% - calc(#{$squareSize} /  2));
+      width: $squareSize;
+      height: $squareSize;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+
+    .detailStatus {
+      position: absolute;
+      left: 60%;
+      top: 3px;
+
+      @media all and (max-width: 468px){
+        left: 67%;
+      }
+    }
+
+  }
+  .evicted,.active {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .evicted {
+    background: #ff020e;
+  }
+  .active {
+    background: #29d524;
+  }
+
+  .playerDetailInfo, .technicalBar, .centerDetail  {
+    p {
+      width: 100%;
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      margin: 3px auto 0;
+      padding: 0 8px;
+      align-self: baseline;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 600;
+      color: #5c5c95;
+    }
+  }
+
+  .playerDetailInfo {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    .leftDetail, .rightDetail{
+      height: 4rem;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+
+    }
+
+    .leftDetail {
+      margin-left: 5px;
+    }
+    .rightDetail{
+      margin-right: 7px;
+    }
+
+    .leftDetail, .rightDetail{
+       div {
+        display: flex;
+        flex-flow: column;
+         justify-content: flex-start;
+         align-items: center;
+      }
+    }
+  }
+
+  .centerDetail {
+    margin-top: 0;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 1.7rem;
+      &:after {
+        content: "yrs";
+        //text-transform: uppercase;
+      }
+    }
+
+    p {
+      font-size: 2.4rem;
+    }
+  }
+
+  .technicalBar {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    & > div {
+      flex: 1 1 0;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+    }
+  }
+
+
+
+  .detailHistory {
+    width: 100%;
+    margin: 5px 0 20px;
+    overflow-x: auto;
+  }
+}

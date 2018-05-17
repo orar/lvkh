@@ -1,0 +1,66 @@
+
+
+.playerScoreList_desc {
+
+  padding-right: 10px;
+  @media all and(max-width:500px){
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+
+.playerScoreList {
+
+
+  .playerScoreList_desc {
+
+  }
+}
+
+.seasonScoreChart {
+
+  margin-top: -10px;
+  margin-bottom: 15px;
+
+  .ant-card-body {
+    padding: 10px;
+  }
+  .seasonScoreBar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 2rem;
+    margin-left: -10px;
+    text-align: center;
+    white-space: nowrap;
+    @media all and (max-width: 350px){
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+
+
+    .seasonScore--tick {
+      flex: 1 0 4.8rem;
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+    .seasonScore--score {
+      flex: 2 2 0;
+    }
+    .seasonScore--global {
+      flex: 4 4 0;
+
+    }
+    .seasonScore--local {
+      flex: 3 3 0;
+
+    }
+  }
+
+}

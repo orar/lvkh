@@ -1,0 +1,33 @@
+
+.playerListViewContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .playerListTabsWrap {
+    width: 700px;
+
+    margin: 10px auto;
+    cursor: auto;
+
+    @media all and (max-width: 992px) {
+      width: 570px;
+    }
+
+    @media all and (max-width: 600px) {
+      width: 90vw;
+    }
+
+
+    @media all and (max-width: 490px) {
+      width: 95vw;
+    }
+
+    .playerListWrap {
+      width: 100%;
+    }
+  }
+
+
+
+}

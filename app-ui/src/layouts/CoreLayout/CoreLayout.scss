@@ -1,0 +1,51 @@
+@import '../../styles/partials/variables';
+
+#core-layout {
+  min-height: 100vh;
+  width: 100%;
+
+  .s-alert-box {
+    z-index: 1200!important;
+    box-shadow: 0 0 2px 1px rgba(42, 42, 42, 0.4);
+  }
+
+  .s-alert-info {
+    background: $s-alert-info;
+    color: #fff;
+  }
+  .s-alert-success {
+    background: $s-alert-success;
+    color: #fff;
+  }
+  .s-alert-warning {
+    background: $s-alert-warning;
+    color: #fff;
+  }
+  .s-alert-error {
+    background: $s-alert-error;
+    color: #fff;
+  }
+}
+
+
+
+#core-layout {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: transparent;
+  padding: 0;
+
+  .body_layout {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    background-color: $body-bg-color;
+    padding-top: 60px;
+    margin: 0;
+
+
+
+  }
+}

@@ -1,0 +1,82 @@
+
+
+.playerInfoContainer {
+  width: 100%;
+
+
+  .playerTitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .playerTitleActionsList {
+      display: inline-flex;
+      justify-content: flex-end;
+    }
+    .playerTitleAction {
+      float: right;
+    }
+  }
+
+  .playerInfoMeta {
+    min-width: 100%;
+    padding-right: 8px;
+
+    .playerInfoDesc {
+      width: 100%;
+      font-size: 13px;
+      margin: 3px auto
+    }
+    .playerInfoDescLay {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+
+    }
+
+    .playerInfoDescLaySpan {
+      width: 100%;
+      flex: 1 1 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-start;
+      font-size: 1.15rem;
+    }
+  }
+
+  .playerSelected {
+    background: #e6ebee;
+   }
+
+
+  .evicted,.active, .injured {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 3px !important;
+    margin: auto 1px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+  }
+  .evicted {
+    background: #db020e;
+  }
+  .active {
+    background: #209f1c;
+  }
+
+  .injured {
+    background: #dcbc15;
+  }
+
+  .playerInfoExpandModal {
+    @media all and (min-width: 800px) {
+     //width: 700px;
+     max-width: 700px;
+    }
+  }
+}

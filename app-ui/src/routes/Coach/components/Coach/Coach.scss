@@ -1,0 +1,159 @@
+
+.seasonContainer {
+  width: 100%;
+  min-height: 100%;
+  margin:  -50px 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  //justify-content: flex-start;
+
+  .faint {
+    color: rgba(116, 116, 116, 0.9);
+  }
+
+  .coverBar {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+
+    .custom-bg {
+      width: 100%;
+    }
+
+  }
+
+  .seasonContent {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+
+
+    @media all and(max-width: 1050px) {
+
+    }
+
+    @media all and (max-width: 768px) {
+      flex-flow: column nowrap;
+      align-items: center;
+      align-content: center;
+      justify-content: flex-start;
+      //position: static;
+    }
+
+
+    .rightContent {
+      flex: 1 1 0;
+      display: flex;
+      flex-flow: column;
+
+      order: 1;
+      width: 100%;
+      align-content: flex-start;
+      padding: 0 0 20px;
+
+      @media all and(max-width: 1024px) {
+        align-items: center;
+      }
+
+      @media all and (min-width: 768px) {
+        position: sticky;
+        top: 150px;
+      }
+
+
+      .adContentRight {
+        display: none;
+
+        @media all and(max-width: 1050px){
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          justify-content: center;
+          align-self: center;
+          margin-top: 20px;
+          width: 80%;
+          height: 150px;
+          background: #e4ffee;
+
+        }
+      }
+    }
+
+
+
+    .appContent {
+      display: flex;
+      order: 2;
+      flex: 3 3 0;
+      width: 100%;
+      flex-flow: column nowrap;
+      justify-content: center;
+      margin: 0 10px;
+
+    }
+
+
+
+    .adPane {
+      display: flex;
+      width: 100%;
+      order: 3;
+      flex: 1 1 0;
+      justify-content: flex-start;
+      background: rgba(48, 110, 203, 0.32);
+      margin-top: 10px;
+      @media all and(max-width: 1050px){
+        display: none;
+      }
+
+      .adContent {
+        width: 200px;
+        height: 300px;
+        text-align: center;
+      }
+
+    }
+  }
+
+
+  /*.vertical-center-modal {
+    text-align: center;
+    white-space: nowrap;
+
+
+    .ant-modal {
+      display: inline-block;
+      vertical-align: middle;
+      top: 0;
+      text-align: left;
+
+      //width: 300px !important;
+      padding: 0;
+
+      .ant-modal-body {
+        padding: 0;
+
+      }
+    }
+
+  }
+
+  .vertical-center-modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+  */
+}
+
+
+.coachAppContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+

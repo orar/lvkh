@@ -1,0 +1,29 @@
+
+
+.roundScoreListContainer {
+
+
+  .roundScoreListWrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    overflow-x: auto;
+
+    /*@media all and (min-width: 1050px){
+      overflow-y: auto;
+      justify-content: space-evenly;
+
+      &:last-child {
+        float: right;
+      }
+    }*/
+
+
+
+    .roundScoreCard {
+
+    }
+  }
+
+}

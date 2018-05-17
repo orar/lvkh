@@ -1,0 +1,41 @@
+@import "../../../../styles/partials/variables";
+
+
+.teamPlayer {
+
+}
+
+
+
+.roundCircle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px $themeBorderHighlight solid;
+}
+
+
+.removePlayer {
+  position: relative;
+
+  &:hover {
+    color: $redWhiteFace;
+  }
+}
+
+.benchContainer {
+
+  .submitFormation_button {
+    float: right;
+  }
+
+  .benchContent {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .benchItem {
+
+  }
+}
